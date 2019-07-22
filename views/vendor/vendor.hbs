@@ -1,0 +1,62 @@
+<head>
+  <link rel="stylesheet" href="https://storage.googleapis.com/penguinwebkit/dashboard%20(2).css">
+  <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,  
+	title:{
+		text: "Past 30 Day Sales"
+	},
+	data: [{
+		yValueFormatString: "#,### Units",
+		xValueFormatString: "YYYY",
+		type: "spline",
+		dataPoints: [
+			{x: 1, y: 2},
+            {x: 2, y: 2},
+            {x: 1, y: 2},
+			
+			{x: new Date(2017, 0), y: 2000000}
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<div style="text-align: center;"><h1>Vendor Home</h1>
+<h4>Welcome, {{customer.first_name}}. Access all vendor features here!</h4>
+
+<div class="row">
+  <div class="column">
+    <div class="card">All Time</div>
+  </div>
+  <div class="column">
+    <div class="card">Today</div>
+  </div>
+  <div class="column">
+    <div class="card">7 Days</div>
+  </div>
+  <div class="column">
+    <div class="card">30 Days</div>
+  </div>
+</div>
+
+<h1>My Uploads</h2>
+<h3>View your uploaded music</h3>
+{{#each product}}
+    <div style="width: 20%; height: 50px; ">
+    <div style="width: 100%; background-size: 100%; background-image: url(https://storage.googleapis.com/penguinwebkit/Flamingo-Dashboard-One.png);">
+    <h3 color: white;>{{productCount}}</h3>
+    </div>
+    <h2>{{title}}</h2>
+    </div>
+{{/each}}
+{{#unless product}}
+<p>There are no products to display. Upload a product to get started.</p>
+{{/unless}}
+<h1>Payouts</h1>
+<p><a href="https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://excellent-zoo-236414.appspot.com/stripe/account&client_id=ca_ER1aOFRlDdeeZypz033ozHQh4aBjUjTm&state={{customer.id}}">Stripe</a></p>
+</div>

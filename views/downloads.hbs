@@ -1,0 +1,18 @@
+<div style="text-align: center; width:100%; margin: 0 auto;">
+    <h1>Downloads</h1>
+    {{#each product}}
+    <div style="width: 75%; margin: auto; background-color: #ff94c1;">
+        <div style="width:50%; float: left; height: 64px; background-color: #ff94c1; text-align: left; padding: 10px;">
+            <p style="vertical-align: middle; color: white; padding: 5;">{{title}}</p>
+        </div>
+        <div style="width:50%; float: right; height: 64px; background-color: #ff94c1; text-align: right; padding: 10px;">
+            <p style="vertical-align: middle; color: white;">
+                <a href='download/product?product={{handle}}' style="color: white; vertical-align: middle">Download (.zip)</a>
+            </p>
+        </div>
+    </div>
+    <div style="width: 75%; height: 20px; background-color: white; float: right;">
+    </div>
+    {{/each}}
+        
+</div>
